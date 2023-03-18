@@ -11,6 +11,5 @@ namespace MyProjet.Models
         public string Comment { get; set; }
         public int Rating { get; set; }
         public int ProductID { get; set; }
-        public List<ProductReviewVM> productReviewVMs { get; set; }
     }
 }

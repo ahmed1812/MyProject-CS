@@ -15,10 +15,10 @@ namespace MyProjet.Models
         {
             return _conn.Query<Product>("SELECT * FROM PRODUCTS;");
         }
-        public ProductReviewVM GetProduct(int id)
+        public Product GetProduct(int id)
         {
-            return (ProductReviewVM)_conn.Query<ProductReviewVM>("select * from sales inner join products on sales.ProductID = products.ProductID where products.ProductID = @id",
-                new { id = id });
+            return _conn.QuerySingle<Product>("SELECT * FROM PRODUCTS WHERE PRODUCTID = @id",
+               new { id = id });
         }
     }
 }

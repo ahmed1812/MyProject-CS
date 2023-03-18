@@ -5,7 +5,7 @@ namespace MyProjet.Models
     public interface IProductRepository
     {
         public IEnumerable<Product> GetAllProducts();
-        public ProductReviewVM GetProduct(int id);
+        public Product GetProduct(int id);
 
     }
 }
