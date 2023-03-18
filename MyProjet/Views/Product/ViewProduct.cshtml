@@ -2,6 +2,10 @@
 
 <h3>@Model.Name Information</h3>
 
+<div style="display: block">
+    <a href="/Product/InsertProduct/">Create a New Product</a>
+</div>
+
 <table class="table">
     <tr>
         <th>Product ID</th>
@@ -19,5 +23,8 @@
         <td>@Model.OnSale</td>
         <td>@Model.StockLevel</td>
     </tr>
-
+   
 </table>
+ <div style="display: block">
+        <a href="/Product/UpdateProduct/@Model.ProductID">Update this Product</a>
+ </div>

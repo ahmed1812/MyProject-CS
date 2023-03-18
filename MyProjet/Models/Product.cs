@@ -12,5 +12,7 @@ namespace MyProjet.Models
         public int CategoryID { get; set; }
         public string OnSale { get; set; }
         public string StockLevel { get; set; }
+        public IEnumerable<Category> Categories { get; set; }
+
     }
 }
