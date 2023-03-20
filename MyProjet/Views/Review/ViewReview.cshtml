@@ -1,0 +1,23 @@
+﻿@model Review
+@{
+    ViewData["Title"] = "ViewReview";
+}
+
+<h1>ViewReview</h1>
+
+<table class="table">
+    <tr>
+        <th>ReviewID</th>
+        <th>Comment</th>
+        <th>ProductID</th>
+        <th>Reviewer</th>
+        <th>Rating</th>
+    </tr>
+    <tr>
+        <td>@Model.ReviewID</td>
+        <td>@Model.Comment</td>
+        <td>@Model.ProductID</td>
+        <td>@Model.Reviewer</td>
+        <td>@Model.Rating</td>
+    </tr>
+</table>

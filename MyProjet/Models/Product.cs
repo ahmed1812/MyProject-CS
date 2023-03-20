@@ -13,6 +13,11 @@ namespace MyProjet.Models
         public string OnSale { get; set; }
         public string StockLevel { get; set; }
         public IEnumerable<Category> Categories { get; set; }
+        public List<Review> Reviews { get; set; }
+        public Product()
+        {
+            Reviews = new List<Review>();
+        }
 
     }
 }

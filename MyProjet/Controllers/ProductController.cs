@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Microsoft.AspNetCore.Mvc;
+using MyProjet.Data;
 using MyProjet.Models;
 using System.Data;
 using System.Linq;
@@ -52,6 +53,12 @@ namespace MyProjet.Controllers
         public IActionResult InsertProductToDatabase(Product productToInsert)
         {
             repo.InsertProduct(productToInsert);
+
+            return RedirectToAction("Index");
+        }
+        public IActionResult DeleteProduct(Product product)
+        {
+            repo.DeleteProduct(product);
 
             return RedirectToAction("Index");
         }

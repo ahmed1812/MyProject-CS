@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MyProjet.Models;
+using MyProjet.Data;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -35,6 +35,10 @@ namespace MyProjet
             });
 
             services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IReviewRepository, RewiewRepository>();
+            services.AddTransient<IJoinRepo, JoinRepo>();
+
+
 
         }
 

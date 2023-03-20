@@ -11,5 +11,7 @@ namespace MyProjet.Models
         public string Comment { get; set; }
         public int Rating { get; set; }
         public int ProductID { get; set; }
+        public IEnumerable<Product> Products { get; set; }
+
     }
 }
