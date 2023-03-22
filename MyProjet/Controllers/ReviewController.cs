@@ -23,7 +23,7 @@ namespace MyProjet.Controllers
 
             return View(review);
         }
-        public IActionResult UpdateProduct(int id)
+        public IActionResult UpdateReview(int id)
         {
             Review rev = repo.GetReview(id);
 
@@ -34,5 +34,13 @@ namespace MyProjet.Controllers
 
             return View(rev);
         }
+        public IActionResult UpdateReivewToDatabase(Review review)
+        {
+            repo.UpdateReview(review);
+
+            return RedirectToAction("ViewReview", new { id = review.ReviewID });
+        }
+
+
     }
 }

@@ -1,0 +1,27 @@
+﻿@model Review
+@{
+    ViewData["Title"] = "UpdateReview";
+}
+
+<h1>UpdateReview</h1>
+
+@using (Html.BeginForm("UpdateReivewToDatabase", "Review", "Post"))
+{
+    <input asp-for="ReviewID" type="hidden" value="@Model.ReviewID" />
+
+    <label asp-for="Reviewer" class="control-label">Reviewer</label>
+
+    <input type="text" name="Reviewer" class="form-control" value="@Model.Reviewer" />
+
+    <label asp-for="Comment" class="control-label">Comment</label>
+
+    <input type="text" name="Comment" class="form-control" value="@Model.Comment" />
+
+     <label asp-for="Rating" class="control-label">Rating</label>
+
+    <input type="number" step="1" name="Rating" class="form-control" value="@Model.Rating" />
+
+    <input type="submit" value="Update Reivew" class="btn btn-primary" />
+
+}
+

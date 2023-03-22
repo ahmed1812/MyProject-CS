@@ -24,8 +24,8 @@ namespace MyProjet.Data
 
         public void UpdateReview(Review review)
         {
-            _conn.Execute("UPDATE reviews SET Reviewer = @Reviewer, Comment = @Comment Rating = @Rating WHERE ProductID = @id",
-                new { reviewer = review.Reviewer, Comment = review.Comment, rating = review.Rating, id = review.ReviewID });
+            _conn.Execute("UPDATE reviews SET Reviewer = @reviewer, Comment = @comment, Rating = @rating WHERE ReviewID = @id",
+                new { reviewer = review.Reviewer, comment = review.Comment, rating = review.Rating, id = review.ReviewID });
 
         }
         //public void InsertProduct(Product productToInsert)
