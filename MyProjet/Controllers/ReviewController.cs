@@ -23,6 +23,16 @@ namespace MyProjet.Controllers
 
             return View(review);
         }
-        
+        public IActionResult UpdateProduct(int id)
+        {
+            Review rev = repo.GetReview(id);
+
+            if (rev == null)
+            {
+                return View("ReviewNotFound");
+            }
+
+            return View(rev);
+        }
     }
 }
