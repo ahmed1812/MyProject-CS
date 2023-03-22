@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyProjet.Data;
+using MyProjet.Models;
 
 namespace MyProjet.Controllers
 {
@@ -18,9 +19,10 @@ namespace MyProjet.Controllers
         public IActionResult ViewReview(int id)
         {
 
-            var product = repo.GetReview(id);
+            var review = repo.GetReview(id);
 
-            return View(product);
+            return View(review);
         }
+        
     }
 }

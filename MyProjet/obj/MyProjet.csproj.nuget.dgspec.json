@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zaidf\\Desktop\\Speaker-app-img-user\\MyProjet\\MyProjet\\MyProjet.csproj": {}
+    "C:\\Users\\Ahmed\\OneDrive\\Desktop\\C#-WORK\\MyProject-CS\\MyProjet\\MyProjet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zaidf\\Desktop\\Speaker-app-img-user\\MyProjet\\MyProjet\\MyProjet.csproj": {
+    "C:\\Users\\Ahmed\\OneDrive\\Desktop\\C#-WORK\\MyProject-CS\\MyProjet\\MyProjet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zaidf\\Desktop\\Speaker-app-img-user\\MyProjet\\MyProjet\\MyProjet.csproj",
+        "projectUniqueName": "C:\\Users\\Ahmed\\OneDrive\\Desktop\\C#-WORK\\MyProject-CS\\MyProjet\\MyProjet.csproj",
         "projectName": "MyProjet",
-        "projectPath": "C:\\Users\\zaidf\\Desktop\\Speaker-app-img-user\\MyProjet\\MyProjet\\MyProjet.csproj",
-        "packagesPath": "C:\\Users\\zaidf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zaidf\\Desktop\\Speaker-app-img-user\\MyProjet\\MyProjet\\obj\\",
+        "projectPath": "C:\\Users\\Ahmed\\OneDrive\\Desktop\\C#-WORK\\MyProject-CS\\MyProjet\\MyProjet.csproj",
+        "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ahmed\\OneDrive\\Desktop\\C#-WORK\\MyProject-CS\\MyProjet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\zaidf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -72,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

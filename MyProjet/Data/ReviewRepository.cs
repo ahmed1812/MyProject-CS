@@ -5,10 +5,10 @@ using System.Data;
 
 namespace MyProjet.Data
 {
-    public class RewiewRepository : IReviewRepository
+    public class ReviewRepository : IReviewRepository
     {
         private readonly IDbConnection _conn;
-        public RewiewRepository(IDbConnection conn)
+        public ReviewRepository(IDbConnection conn)
         {
             _conn = conn;
         }
@@ -18,7 +18,7 @@ namespace MyProjet.Data
         }
         public Review GetReview(int id)
         {
-            return _conn.QuerySingle<Review>("SELECT * FROM PRODUCTS WHERE PRODUCTID = @id",
+            return _conn.QuerySingle<Review>("SELECT * FROM reviews WHERE ReviewID = @id",
                new { id });
         }
 

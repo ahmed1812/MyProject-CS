@@ -35,7 +35,7 @@ namespace MyProjet
             });
 
             services.AddTransient<IProductRepository, ProductRepository>();
-            services.AddTransient<IReviewRepository, RewiewRepository>();
+            services.AddTransient<IReviewRepository, ReviewRepository>();
             services.AddTransient<IJoinRepo, JoinRepo>();
 
 
