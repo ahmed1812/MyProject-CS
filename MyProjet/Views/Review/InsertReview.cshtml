@@ -1,0 +1,31 @@
+﻿@model Review
+@{
+    ViewData["Title"] = "InsertReview";
+}
+
+<h1>InsertReview</h1>
+
+@using (Html.BeginForm("InsertReviewToDatabase", "Review", "Post"))
+{
+    <input asp-for="ReviewID" type="hidden" value="" />
+
+    <label asp-for="Reviewer" class="control-label">Reviewer</label>
+    <input type="text" name="Reviewer" class="form-control" value="" />
+
+    <label asp-for="Comment" class="control-label">Comment</label>
+    <input type="text" name="Comment" class="form-control" value="" />
+
+    <label asp-for="Rating" class="control-label">Price</label>
+    <input type="number" step="1" name="Rating" class="form-control" />
+
+    <div class="form-group">
+        <label for="">Select a Category</label>
+        <select class="form-control" name="ProductID" value="">
+            @foreach (var pro in Model.Products)
+            {
+                <option value="@pro.ProductID">@pro.ProductID @pro.Name</option>
+            }
+        </select>
+    </div>
+    <input type="submit" value="Create Review" class="btn btn-primary" />
+}

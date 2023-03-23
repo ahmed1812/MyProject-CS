@@ -427,3 +427,4 @@ C:\Users\Ahmed\OneDrive\Desktop\C#-WORK\MyProject-CS\MyProjet\bin\Debug\netcorea
 C:\Users\Ahmed\OneDrive\Desktop\C#-WORK\MyProject-CS\MyProjet\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 C:\Users\Ahmed\OneDrive\Desktop\C#-WORK\MyProject-CS\MyProjet\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Ahmed\OneDrive\Desktop\C#-WORK\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\Review\UpdateReview.cshtml.g.cs
+C:\Users\Ahmed\OneDrive\Desktop\C#-WORK\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\Review\InsertReview.cshtml.g.cs

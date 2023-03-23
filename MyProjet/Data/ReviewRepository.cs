@@ -30,14 +30,14 @@ namespace MyProjet.Data
         }
         public void InsertReview(Review ReviewToInsert)
         {
-            _conn.Execute("INSERT INTO reviews (reviewer, comment, rating, ProductID) VALUES (@reviewer, @comment, @rating, @ProductID);",
-                new { reviewer = ReviewToInsert.Reviewer, comment = ReviewToInsert.Comment, rating = ReviewToInsert.Rating, ProductID = ReviewToInsert.ProductID });
+            _conn.Execute("INSERT INTO reviews (reviewer, comment, rating, productID) VALUES (@reviewer, @comment, @rating, @ProductID);",
+                new { reviewer = ReviewToInsert.Reviewer, comment = ReviewToInsert.Comment, rating = ReviewToInsert.Rating, productID = ReviewToInsert.ProductID });
         }
         public IEnumerable<Product> GetProducts()
         {
             return _conn.Query<Product>("SELECT * FROM PRODUCTS;");
         }
-        public Review AssignCategory()
+        public Review AssignProduct()
         {
             var reviewList = GetProducts();
             var review = new Review();
