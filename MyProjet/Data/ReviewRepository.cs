@@ -33,18 +33,18 @@ namespace MyProjet.Data
             _conn.Execute("INSERT INTO reviews (reviewer, comment, rating, ProductID) VALUES (@reviewer, @comment, @rating, @ProductID);",
                 new { reviewer = ReviewToInsert.Reviewer, comment = ReviewToInsert.Comment, rating = ReviewToInsert.Rating, ProductID = ReviewToInsert.ProductID });
         }
-        //public IEnumerable<Category> GetCategories()
-        //{
-        //    return _conn.Query<Category>("SELECT * FROM categories;");
-        //}
-        //public Product AssignCategory()
-        //{
-        //    var categoryList = GetCategories();
-        //    var product = new Product();
-        //    product.Categories = categoryList;
+        public IEnumerable<Product> GetProducts()
+        {
+            return _conn.Query<Product>("SELECT * FROM PRODUCTS;");
+        }
+        public Review AssignCategory()
+        {
+            var reviewList = GetProducts();
+            var review = new Review();
+            review.Products = reviewList;
 
-        //    return product;
-        //}
+            return review;
+        }
         //public void DeleteProduct(Product product)
         //{
         //    _conn.Execute("DELETE FROM REVIEWS WHERE ProductID = @id;",

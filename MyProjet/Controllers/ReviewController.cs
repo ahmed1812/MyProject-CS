@@ -40,6 +40,18 @@ namespace MyProjet.Controllers
 
             return RedirectToAction("ViewReview", new { id = review.ReviewID });
         }
+        public IActionResult InsertReview()
+        {
+            var rev = repo.AssignProduct();
+
+            return View(rev);
+        }
+        public IActionResult InsertReviewToDatabase(Review reviewToInsert)
+        {
+            repo.InsertReview(reviewToInsert);
+
+            return RedirectToAction("Index");
+        }
 
 
     }
