@@ -28,11 +28,11 @@ namespace MyProjet.Data
                 new { reviewer = review.Reviewer, comment = review.Comment, rating = review.Rating, id = review.ReviewID });
 
         }
-        //public void InsertProduct(Product productToInsert)
-        //{
-        //    _conn.Execute("INSERT INTO products (NAME, PRICE, CATEGORYID) VALUES (@name, @price, @categoryID);",
-        //        new { name = productToInsert.Name, price = productToInsert.Price, categoryID = productToInsert.CategoryID });
-        //}
+        public void InsertReview(Review ReviewToInsert)
+        {
+            _conn.Execute("INSERT INTO reviews (reviewer, comment, rating, ProductID) VALUES (@reviewer, @comment, @rating, @ProductID);",
+                new { reviewer = ReviewToInsert.Reviewer, comment = ReviewToInsert.Comment, rating = ReviewToInsert.Rating, ProductID = ReviewToInsert.ProductID });
+        }
         //public IEnumerable<Category> GetCategories()
         //{
         //    return _conn.Query<Category>("SELECT * FROM categories;");
