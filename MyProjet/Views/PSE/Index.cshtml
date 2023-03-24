@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Product>
+
+@foreach (var parent in Model)
+{
+    <h2>@parent.Name</h2>
+    <ul>
+        @foreach (var child in parent.Sales)
+        {
+            <li>@child.PricePerUnit</li>
+            <ul>
+                @foreach (var grandChild in child.Employees)
+                {
+                    <li>@grandChild.FirstName</li>
+                }
+            </ul>
+        }
+    </ul>
+}
+

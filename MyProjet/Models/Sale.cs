@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 
 namespace MyProjet.Models
@@ -9,7 +10,7 @@ namespace MyProjet.Models
         public string ProductID { get; set; }
         public string Quantity { get; set; }
         public double PricePerUnit { get; set; }
-        public DateAndTime Date { get; set; }
+        public DateTime Date { get; set; }
         public int EmployeeID { get; set; }
         public List<Employee> Employees { get; set; } = new List<Employee>();
 

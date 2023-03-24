@@ -13,13 +13,9 @@ namespace MyProjet.Models
         public string OnSale { get; set; }
         public string StockLevel { get; set; }
         public IEnumerable<Category> Categories { get; set; }
-        public List<Review> Reviews { get; set; }
-        public List<Sale> Sales { get; set; }
+        public List<Review> Reviews { get; set; } = new List<Review>();
+        public List<Sale> Sales { get; set; } = new List<Sale>();
 
-        public Product()
-        {
-            Reviews = new List<Review>();
-            Sales = new List<Sale>();
-        }
+        
     }
 }

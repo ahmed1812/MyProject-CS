@@ -1,31 +1,39 @@
-﻿using MyProjet.Models;
+﻿using Dapper;
+using MyProjet.Models;
 using System.Collections.Generic;
+using System.Data;
 
 namespace MyProjet.Data
 {
     public class Join3Tables : IJoin3Tables
     {
+        private readonly IDbConnection _conn;
+        public Join3Tables(IDbConnection conn)
+        {
+            _conn = conn;
+        }
         public IEnumerable<Product> GetParentChildGrandChildData()
         {
-            string sql = @"SELECT p.*, c.*, gc.*
-                   FROM ParentTable p
-                   JOIN ChildTable c ON p.Id = c.ParentId
-                   JOIN GrandChildTable gc ON c.Id = gc.ChildId";
+            string sql = @"SELECT p.*, s.*, e.*
+                   FROM products p
+                   JOIN sales s ON p.ProductID = s.ProductID
+                   JOIN employees e ON s.EmployeeID = s.EmployeeID 
+                   WHERE p.ProductID = 4";
 
-            var data = _db.Query<ParentModel, ChildModel, GrandChildModel, ParentModel>(
+            var data = _conn.Query<Product, Sale, Employee, Product>(
                 sql,
-                (parent, child, grandChild) =>
+                (product, sale, employee) =>
                 {
-                    child.GrandChildCollection.Add(grandChild);
+                    sale.Employees.Add(employee);
 
-                    if (!parent.ChildCollection.Contains(child))
+                    if (!product.Sales.Contains(sale))
                     {
-                        parent.ChildCollection.Add(child);
+                        product.Sales.Add(sale);
                     }
 
-                    return parent;
+                    return product;
                 },
-                splitOn: "ParentId, ChildId"
+                splitOn: "ProductID, EmployeeID"
             );
 
             return data;

@@ -16,7 +16,10 @@ namespace MyProjet.Data
 
         public IEnumerable<Product> GetJoinTables()
         {
-            var query = @"SELECT * FROM bestbuy.products JOIN bestbuy.reviews ON products.ProductID = reviews.ProductID";
+            var query = @"SELECT * 
+                            FROM bestbuy.products 
+                            JOIN bestbuy.reviews 
+                            ON products.ProductID = reviews.ProductID";
             var results = _conn.Query<Product, Review, Product>(query,
                 (p, r) =>
                 {
