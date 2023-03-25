@@ -1,19 +1,33 @@
 ﻿@model IEnumerable<Product>
 
-@foreach (var parent in Model)
-{
-    <h2>@parent.Name</h2>
-    <ul>
-        @foreach (var child in parent.Sales)
-        {
-            <li>@child.PricePerUnit</li>
-            <ul>
-                @foreach (var grandChild in child.Employees)
-                {
-                    <li>@grandChild.FirstName</li>
-                }
-            </ul>
-        }
-    </ul>
+@{
+    ViewData["Title"] = "Index";
 }
 
+<h1>Index</h1>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category ID</th>
+        <th>On Sale</th>
+        <th>Stock Level</th>
+    </tr>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.Name</td>
+             @foreach (var child in product.Sales)
+            {
+                <td>@child.PricePerUnit</td>
+                 
+                     @foreach (var grandChild in child.Employees)
+                    {
+                        <td>@grandChild.FirstName</td>
+                    }
+                 
+            }
+        </tr>      
+    }
+</table>
