@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MyProjet",
+    "\\MyProjet\\Models"
   ],
-  "SelectedNode": "\\MyProjet.sln",
+  "SelectedNode": "\\MyProjet\\Models\\Category.cs",
   "PreviewInSolutionExplorer": false
 }
