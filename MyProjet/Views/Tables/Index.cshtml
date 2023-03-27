@@ -18,15 +18,15 @@
     {
         <tr>
             <td>@product.Name</td>
-            <td>@product.Price</td>
-            <td>@product.CategoryID</td>
+@*            <td>@product.ProductID</td>
+*@           @* <td>@product.CategoryID</td>
             <td>@product.OnSale</td>
             <td>@product.StockLevel</td>
              @foreach (var review in product.Reviews)
             {
                 <td>@review.ReviewID</td>
                 <td>@review.Comment</td>
-            }
+            }*@
         </tr>      
     }
 </table>
