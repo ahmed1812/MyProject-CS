@@ -1,7 +1,7 @@
 ﻿using MyProjet.Models;
 using System.Collections.Generic;
 
-namespace MyProjet.Data
+namespace MyProjet.Data.Entity
 {
     public interface IReviewRepository
     {

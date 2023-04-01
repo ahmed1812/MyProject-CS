@@ -1,7 +1,7 @@
 ﻿using MyProjet.Models;
 using System.Collections.Generic;
 
-namespace MyProjet.Data
+namespace MyProjet.Data.Relationship
 {
     public interface IJoin3Tables
     {

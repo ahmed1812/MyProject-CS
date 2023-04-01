@@ -1,6 +1,6 @@
 ﻿using Dapper;
 using Microsoft.AspNetCore.Mvc;
-using MyProjet.Data;
+using MyProjet.Data.Entity;
 using MyProjet.Models;
 using System.Data;
 using System.Linq;

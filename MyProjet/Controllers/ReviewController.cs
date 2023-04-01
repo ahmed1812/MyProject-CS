@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MyProjet.Data;
+using MyProjet.Data.Entity;
 using MyProjet.Models;
 
 namespace MyProjet.Controllers

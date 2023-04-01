@@ -3,7 +3,7 @@ using MyProjet.Models;
 using System.Collections.Generic;
 using System.Data;
 
-namespace MyProjet.Data
+namespace MyProjet.Data.Relationship
 {
     public class Join3Tables : IJoin3Tables
     {
