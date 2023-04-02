@@ -39,6 +39,7 @@ namespace MyProjet
             services.AddTransient<IReviewRepository, ReviewRepository>();
             services.AddTransient<IJoinRepo, JoinRepo>();
             services.AddTransient<IJoin3Tables, Join3Tables>();
+            services.AddTransient<IJoin8, Join8>();
 
 
 

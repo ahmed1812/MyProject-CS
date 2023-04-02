@@ -429,3 +429,4 @@ C:\Users\Ahmed\OneDrive\Desktop\C#-WORK\MyProject-CS\MyProjet\bin\Debug\netcorea
 C:\Users\Ahmed\OneDrive\Desktop\C#-WORK\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\Review\UpdateReview.cshtml.g.cs
 C:\Users\Ahmed\OneDrive\Desktop\C#-WORK\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\Review\InsertReview.cshtml.g.cs
 C:\Users\Ahmed\OneDrive\Desktop\C#-WORK\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\PSE\Index.cshtml.g.cs
+C:\Users\Ahmed\OneDrive\Desktop\C#-WORK\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\JoinTables8\Index.cshtml.g.cs

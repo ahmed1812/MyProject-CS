@@ -15,7 +15,7 @@ namespace MyProjet.Data.Relationship
         }
         public IEnumerable<Department> GetParentChildGrandChildGreatGrandChildData()
         {
-            string sql = @"SELECT d.Name as DepartmentName, e.FirstName, e.LastName, e.Title
+            string sql = @"SELECT d.*, c.*, p.*,s.*, e.*
                             FROM bestbuy.departments as d
                             JOIN bestbuy.categories as c ON d.DepartmentID = c.DepartmentID
                             JOIN bestbuy.products as p ON c.CategoryID = p.CategoryID
@@ -41,9 +41,9 @@ namespace MyProjet.Data.Relationship
                         cat.Products.Add(pro);
                     }
 
-                    if (!dep.Categories.Contains(cat))
+                    if (!dep.Categories1.Contains(cat))
                     {
-                        dep.Categories.Add(cat);
+                        dep.Categories1.Add(cat);
                     }
 
                     return dep;
