@@ -3,18 +3,17 @@ using MyProjet.Data.Relationship;
 
 namespace MyProjet.Controllers
 {
-    public class TablesController : Controller
+    public class JoinTables8Controller : Controller
     {
-        private readonly IJoinRepo repo;
-        public TablesController(IJoinRepo repo)
+        private readonly IJoin8 repo;
+        public JoinTables8Controller(IJoin8 repo)
         {
             this.repo = repo;
         }
         public IActionResult Index()
         {
-            var data = repo.GetJoinTables();
+            var data = repo.GetParentChildGrandChildGreatGrandChildData();
             return View(data);
         }
-       
     }
 }
