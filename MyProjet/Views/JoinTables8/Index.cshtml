@@ -18,16 +18,16 @@
     {
         <tr>
             <td>@product.DepartmentID</td>
-            @* @foreach (var child in product.Sales)
+             @foreach (var child in product.Categories1)
             {
-                <td>@child.PricePerUnit</td>
+                <td>@child.Name</td>
                  
-                     @foreach (var grandChild in child.Employees)
+                     @foreach (var grandChild in child.Products)
                     {
-                        <td>@grandChild.FirstName</td>
+                        <td>@grandChild.Name</td>
                     }
                  
-            }*@
+            }
         </tr>      
     }
 </table>
