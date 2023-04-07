@@ -17,14 +17,22 @@
     @foreach (var product in Model)
     {
         <tr>
-            <td>@product.DepartmentID</td>
+            <td>@product.Name</td>
              @foreach (var child in product.Categories1)
             {
-                <td>@child.Name</td>
+               @* <td>@child.Name</td>*@
                  
                      @foreach (var grandChild in child.Products)
                     {
-                        <td>@grandChild.Name</td>
+                         @foreach (var ggh in grandChild.Sales)
+                        {
+                            @foreach (var x in ggh.Employees)
+                            {
+                                <td>@x.FirstName</td>
+                                <td>@x.LastName</td>
+                                <td>@x.Title</td>
+                            }
+                        }
                     }
                  
             }
