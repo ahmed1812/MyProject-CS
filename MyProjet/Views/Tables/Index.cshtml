@@ -1,32 +1,21 @@
-﻿@model IEnumerable<Product>
+﻿@model List<ProductReview>
 
-@{
-    ViewData["Title"] = "Index";
-}
+<h2>Product Reviews</h2>
 
-<h1>Index</h1>
-<table class="table">
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Category ID</th>
-        <th>On Sale</th>
-        <th>Stock Level</th>
-    </tr>
-    @foreach (var product in Model)
-    {
+<table>
+    <thead>
         <tr>
-            <td>@product.Name</td>
-@*            <td>@product.ProductID</td>
-*@           @* <td>@product.CategoryID</td>
-            <td>@product.OnSale</td>
-            <td>@product.StockLevel</td>
-             @foreach (var review in product.Reviews)
-            {
-                <td>@review.ReviewID</td>
-                <td>@review.Comment</td>
-            }*@
-        </tr>      
-    }
+            <th>Product Name</th>
+            <th>Average Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ProductReview productReview in Model)
+        {
+            <tr>
+                <td>@productReview.Name</td>
+                <td>@productReview.AverageRating</td>
+            </tr>
+        }
+    </tbody>
 </table>
