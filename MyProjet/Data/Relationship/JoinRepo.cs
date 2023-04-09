@@ -16,10 +16,11 @@ namespace MyProjet.Data.Relationship
 
         public IEnumerable<Product> GetJoinTables()
         {
-            var query = @"SELECT *
-                            FROM bestbuy.products p
-                            JOIN bestbuy.reviews r ON p.ProductID = r.ProductID
-                            WHERE r.Rating = 5
+            var query = @"SELECT products.Name, AVG(reviews.Rating) 
+                            FROM bestbuy.products 
+                            LEFT JOIN bestbuy.reviews ON products.ProductID = reviews.ProductID 
+                            GROUP BY products.ProductID 
+                            HAVING COUNT(reviews.ReviewID) > 0;
                            ";
             var results = _conn.Query<Product, Review, Product>(query,
                 (p, r) =>
