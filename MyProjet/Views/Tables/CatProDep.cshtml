@@ -1,0 +1,21 @@
+﻿@model List<CategroeProductDepartment>
+
+<h2>Product Reviews</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Category Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pc in Model)
+        {
+            <tr>
+                <td>@pc.DName</td>
+                <td>@pc.CName</td>
+            </tr>
+        }
+    </tbody>
+</table>

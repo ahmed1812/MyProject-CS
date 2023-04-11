@@ -17,7 +17,7 @@ namespace MyProjet.Controllers
         {
             _conn = conn;
         }
-    
+        //3
         public ActionResult Index()
         {
             string query = "SELECT products.Name, AVG(reviews.Rating) as AverageRating " +
@@ -43,6 +43,7 @@ namespace MyProjet.Controllers
             }
             return View(productReviews);
         }
+        //1
         public ActionResult ProdCateg()
         {
             string query = "SELECT products.Name, products.Price FROM bestbuy.products JOIN bestbuy.categories ON products.CategoryID = categories.CategoryID WHERE categories.Name = 'Computers';";
@@ -64,6 +65,7 @@ namespace MyProjet.Controllers
             }
             return View(productCategorys);
         }
+        //4
         public ActionResult EmpSal()
         {
             string query = "SELECT employees.FirstName, employees.LastName, SUM(sales.Quantity * sales.PricePerUnit) AS TotalSale FROM bestbuy.employees JOIN bestbuy.sales ON employees.EmployeeID = sales.EmployeeID WHERE sales.Date >= '2017-01-01' AND sales.Date <= '2017-12-31' GROUP BY employees.EmployeeID;";
@@ -85,6 +87,28 @@ namespace MyProjet.Controllers
                 }
             }
             return View(empSals);
+        }
+        //2
+        public ActionResult CatProDep()
+        {
+            string query = "SELECT DISTINCT categories.Name as cname, departments.Name as dname FROM bestbuy.categories JOIN bestbuy.products ON categories.CategoryID = products.CategoryID JOIN bestbuy.departments ON categories.DepartmentID = departments.DepartmentID WHERE products.OnSale = 1;";
+
+            List<CategroeProductDepartment> categroeProductDepartments = new List<CategroeProductDepartment>();
+
+            using (var conn = _conn)
+            {
+                var adapter = new MySqlDataAdapter(query, (MySqlConnection)conn);
+                DataSet dataSet = new DataSet();
+                adapter.Fill(dataSet);
+                foreach (DataRow row in dataSet.Tables[0].Rows)
+                {
+                    CategroeProductDepartment categroeProductDepartment = new CategroeProductDepartment();
+                    categroeProductDepartment.CName = row["cname"].ToString();
+                    categroeProductDepartment.DName = row["dname"].ToString();
+                    categroeProductDepartments.Add(categroeProductDepartment);
+                }
+            }
+            return View(categroeProductDepartments);
         }
     }
 }
