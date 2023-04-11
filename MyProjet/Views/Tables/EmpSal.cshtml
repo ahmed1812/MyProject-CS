@@ -1,0 +1,23 @@
+﻿@model List<EmpSal>
+
+<h2>Product Reviews</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Category Price</th>
+            <th>Category Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var es in Model)
+        {
+            <tr>
+                <td>@es.FirstName</td>
+                <td>@es.LastNmae</td>
+                <td>@es.Total</td>
+            </tr>
+        }
+    </tbody>
+</table>
