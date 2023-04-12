@@ -7701,11 +7701,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ahmed\\OneDrive\\Desktop\\C#-WORK\\MyProject-CS\\MyProjet\\MyProjet.csproj",
+      "projectUniqueName": "C:\\Users\\Ahmed\\OneDrive\\Desktop\\MyProject-CS\\MyProjet\\MyProjet.csproj",
       "projectName": "MyProjet",
-      "projectPath": "C:\\Users\\Ahmed\\OneDrive\\Desktop\\C#-WORK\\MyProject-CS\\MyProjet\\MyProjet.csproj",
+      "projectPath": "C:\\Users\\Ahmed\\OneDrive\\Desktop\\MyProject-CS\\MyProjet\\MyProjet.csproj",
       "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ahmed\\OneDrive\\Desktop\\C#-WORK\\MyProject-CS\\MyProjet\\obj\\",
+      "outputPath": "C:\\Users\\Ahmed\\OneDrive\\Desktop\\MyProject-CS\\MyProjet\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
