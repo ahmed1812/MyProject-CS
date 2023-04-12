@@ -594,3 +594,4 @@ C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\My
 C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\MyProjet.dll
 C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\MyProjet.pdb
 C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\MyProjet.genruntimeconfig.cache
+C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\Tables\ProdSt.cshtml.g.cs

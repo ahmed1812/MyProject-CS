@@ -110,5 +110,27 @@ namespace MyProjet.Controllers
             }
             return View(categroeProductDepartments);
         }
+        //5
+        public ActionResult ProdSt()
+        {
+            string query = "SELECT products.Name, products.StockLevel FROM bestbuy.products ORDER BY products.StockLevel ASC LIMIT 3;";
+
+            List<Product> products = new List<Product>();
+
+            using (var conn = _conn)
+            {
+                var adapter = new MySqlDataAdapter(query, (MySqlConnection)conn);
+                DataSet dataSet = new DataSet();
+                adapter.Fill(dataSet);
+                foreach (DataRow row in dataSet.Tables[0].Rows)
+                {
+                    Product product = new Product();
+                    product.Name = row["Name"].ToString();
+                    product.StockLevel = row["StockLevel"].ToString();
+                    products.Add(product);
+                }
+            }
+            return View(products);
+        }
     }
 }
