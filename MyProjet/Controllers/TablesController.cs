@@ -132,5 +132,27 @@ namespace MyProjet.Controllers
             }
             return View(products);
         }
+        //6
+        public ActionResult AvgProductGame()
+        {
+            string query = "SELECT p.Name, AVG(r.Rating) as avg FROM bestbuy.products as p JOIN bestbuy.categories c ON p.CategoryID = c.CategoryID LEFT JOIN bestbuy.reviews r ON p.ProductID = r.ProductID WHERE c.Name = 'Games' GROUP BY p.ProductID HAVING AVG(r.Rating) >= 4;";
+
+            List<AvgProdGame> avgProdGames = new List<AvgProdGame>();
+
+            using (var conn = _conn)
+            {
+                var adapter = new MySqlDataAdapter(query, (MySqlConnection)conn);
+                DataSet dataSet = new DataSet();
+                adapter.Fill(dataSet);
+                foreach (DataRow row in dataSet.Tables[0].Rows)
+                {
+                    AvgProdGame avgProdGame = new AvgProdGame();
+                    avgProdGame.Name = row["Name"].ToString();
+                    avgProdGame.Avg = double.Parse(row["avg"].ToString());
+                    avgProdGames.Add(avgProdGame);
+                }
+            }
+            return View(avgProdGames);
+        }
     }
 }
