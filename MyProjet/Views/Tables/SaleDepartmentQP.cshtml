@@ -1,8 +1,20 @@
-﻿
-@{
-    ViewData["Title"] = "SaleDepartmentQP";
-    Layout = "~/Views/Tables";
-}
+﻿@model IEnumerable<SaleDepartment>
+<h2>7- Retrieve the name and total sales revenue of each department in the year 2019:</h2>
 
-<h1>SaleDepartmentQP</h1>
-
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Category Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pc in Model)
+        {
+            <tr>
+                <td>@pc.Name</td>
+                <td>@pc.SumQP</td>
+            </tr>
+        }
+    </tbody>
+</table>
