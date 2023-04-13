@@ -1,8 +1,21 @@
-﻿
-@{
-    ViewData["Title"] = "AvgProductGame";
-    Layout = "~/Views/Tables";
-}
+﻿@model List<AvgProdGame>
 
-<h1>AvgProductGame</h1>
+<h2>6. Retrieve the name and average rating of all products in the "Games" category that have an average rating greater than or equal to 4:</h2>
 
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Category Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var es in Model)
+        {
+            <tr>
+                <td>@es.Name</td>
+                <td>@es.Avg</td>
+            </tr>
+        }
+    </tbody>
+</table>

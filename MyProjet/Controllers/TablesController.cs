@@ -154,5 +154,26 @@ namespace MyProjet.Controllers
             }
             return View(avgProdGames);
         }
+        public ActionResult SaleDepartmentQP()
+        {
+            string query = "SELECT d.Name, SUM(s.Quantity * s.PricePerUnit) as sumqp FROM bestbuy.departments as d JOIN bestbuy.categories as c ON d.DepartmentID = c.DepartmentID JOIN bestbuy.products as p ON c.CategoryID = p.CategoryID JOIN bestbuy.sales as s ON p.ProductID = s.ProductID WHERE s.Date >= '20190101' AND s.Date <= '20191231' GROUP BY d.DepartmentID;";
+
+            List<SaleDepartment> saleDepartments = new List<SaleDepartment>();
+
+            using (var conn = _conn)
+            {
+                var adapter = new MySqlDataAdapter(query, (MySqlConnection)conn);
+                DataSet dataSet = new DataSet();
+                adapter.Fill(dataSet);
+                foreach (DataRow row in dataSet.Tables[0].Rows)
+                {
+                    SaleDepartment saleDepartment = new SaleDepartment();
+                    saleDepartment.Name = row["Name"].ToString();
+                    saleDepartment.SumQP = double.Parse(row["sumqp"].ToString());
+                    saleDepartments.Add(saleDepartment);
+                }
+            }
+            return View(saleDepartments);
+        }
     }
 }
