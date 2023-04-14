@@ -154,6 +154,7 @@ namespace MyProjet.Controllers
             }
             return View(avgProdGames);
         }
+        // 7
         public ActionResult SaleDepartmentQP()
         {
             string query = "SELECT d.Name, SUM(s.Quantity * s.PricePerUnit) as sumqp FROM bestbuy.departments as d JOIN bestbuy.categories as c ON d.DepartmentID = c.DepartmentID JOIN bestbuy.products as p ON c.CategoryID = p.CategoryID JOIN bestbuy.sales as s ON p.ProductID = s.ProductID WHERE s.Date >= '20190101' AND s.Date <= '20191231' GROUP BY d.DepartmentID;";
