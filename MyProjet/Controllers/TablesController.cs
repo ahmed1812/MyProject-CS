@@ -176,5 +176,28 @@ namespace MyProjet.Controllers
             }
             return View(saleDepartments);
         }
+        // 8
+        public ActionResult EmployeeBestSale()
+        {
+            string query = "SELECT d.Name as DepartmentName, e.FirstName, e.LastName, e.Title FROM bestbuy.departments as d JOIN bestbuy.categories as c ON d.DepartmentID = c.DepartmentID JOIN bestbuy.products as p ON c.CategoryID = p.CategoryID JOIN bestbuy.sales as s ON p.ProductID = s.ProductID JOIN bestbuy.employees as e ON s.EmployeeID = e.EmployeeID WHERE s.Date >= '2018-01-01' and s.Date <= '2018-12-31' ORDER BY d.Name, e.FirstName, e.LastName;";
+            List<EmployeeSale> employeeSales = new List<EmployeeSale>();
+
+            using (var conn = _conn)
+            {
+                var adapter = new MySqlDataAdapter(query, (MySqlConnection)conn);
+                DataSet dataSet = new DataSet();
+                adapter.Fill(dataSet);
+                foreach (DataRow row in dataSet.Tables[0].Rows)
+                {
+                    EmployeeSale employeeSale = new EmployeeSale();
+                    employeeSale.DepartmentName = row["DepartmentName"].ToString();
+                    employeeSale.FName = row["FirstName"].ToString();
+                    employeeSale.LName = row["LastName"].ToString();
+                    employeeSale.Title = row["Title"].ToString();
+                    employeeSales.Add(employeeSale);
+                }
+            }
+            return View(employeeSales);
+        }
     }
 }
