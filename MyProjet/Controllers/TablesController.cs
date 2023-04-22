@@ -12,6 +12,7 @@ namespace MyProjet.Controllers
     public class TablesController : Controller
     {
         private readonly IDbConnection _conn;
+        public string query { get; set; }
         //private readonly string _connectionString = "Server=localhost;Database=bestbuy;uid=root;Pwd=root;Port=3306;";
         public TablesController(IDbConnection conn)
         {
@@ -20,7 +21,7 @@ namespace MyProjet.Controllers
         //3
         public ActionResult Index()
         {
-            string query = "SELECT products.Name, AVG(reviews.Rating) as AverageRating " +
+            query = "SELECT products.Name, AVG(reviews.Rating) as AverageRating " +
                        "FROM bestbuy.products " +
                        "LEFT JOIN bestbuy.reviews ON products.ProductID = reviews.ProductID " +
                        "GROUP BY products.ProductID " +
@@ -46,7 +47,7 @@ namespace MyProjet.Controllers
         //1
         public ActionResult ProdCateg()
         {
-            string query = "SELECT products.Name, products.Price FROM bestbuy.products JOIN bestbuy.categories ON products.CategoryID = categories.CategoryID WHERE categories.Name = 'Computers';";
+            query = "SELECT products.Name, products.Price FROM bestbuy.products JOIN bestbuy.categories ON products.CategoryID = categories.CategoryID WHERE categories.Name = 'Computers';";
 
             List<ProductCategory> productCategorys = new List<ProductCategory>();
 
@@ -68,7 +69,7 @@ namespace MyProjet.Controllers
         //4
         public ActionResult EmpSal()
         {
-            string query = "SELECT employees.FirstName, employees.LastName, SUM(sales.Quantity * sales.PricePerUnit) AS TotalSale FROM bestbuy.employees JOIN bestbuy.sales ON employees.EmployeeID = sales.EmployeeID WHERE sales.Date >= '2017-01-01' AND sales.Date <= '2017-12-31' GROUP BY employees.EmployeeID;";
+            query = "SELECT employees.FirstName, employees.LastName, SUM(sales.Quantity * sales.PricePerUnit) AS TotalSale FROM bestbuy.employees JOIN bestbuy.sales ON employees.EmployeeID = sales.EmployeeID WHERE sales.Date >= '2017-01-01' AND sales.Date <= '2017-12-31' GROUP BY employees.EmployeeID;";
 
             List<EmpSal> empSals = new List<EmpSal>();
 
@@ -91,7 +92,7 @@ namespace MyProjet.Controllers
         //2
         public ActionResult CatProDep()
         {
-            string query = "SELECT DISTINCT categories.Name as cname, departments.Name as dname FROM bestbuy.categories JOIN bestbuy.products ON categories.CategoryID = products.CategoryID JOIN bestbuy.departments ON categories.DepartmentID = departments.DepartmentID WHERE products.OnSale = 1;";
+            query = "SELECT DISTINCT categories.Name as cname, departments.Name as dname FROM bestbuy.categories JOIN bestbuy.products ON categories.CategoryID = products.CategoryID JOIN bestbuy.departments ON categories.DepartmentID = departments.DepartmentID WHERE products.OnSale = 1;";
 
             List<CategroeProductDepartment> categroeProductDepartments = new List<CategroeProductDepartment>();
 
@@ -113,7 +114,7 @@ namespace MyProjet.Controllers
         //5
         public ActionResult ProdSt()
         {
-            string query = "SELECT products.Name, products.StockLevel FROM bestbuy.products ORDER BY products.StockLevel ASC LIMIT 3;";
+            query = "SELECT products.Name, products.StockLevel FROM bestbuy.products ORDER BY products.StockLevel ASC LIMIT 3;";
 
             List<Product> products = new List<Product>();
 
@@ -135,7 +136,7 @@ namespace MyProjet.Controllers
         //6
         public ActionResult AvgProductGame()
         {
-            string query = "SELECT p.Name, AVG(r.Rating) as avg FROM bestbuy.products as p JOIN bestbuy.categories c ON p.CategoryID = c.CategoryID LEFT JOIN bestbuy.reviews r ON p.ProductID = r.ProductID WHERE c.Name = 'Games' GROUP BY p.ProductID HAVING AVG(r.Rating) >= 4;";
+            query = "SELECT p.Name, AVG(r.Rating) as avg FROM bestbuy.products as p JOIN bestbuy.categories c ON p.CategoryID = c.CategoryID LEFT JOIN bestbuy.reviews r ON p.ProductID = r.ProductID WHERE c.Name = 'Games' GROUP BY p.ProductID HAVING AVG(r.Rating) >= 4;";
 
             List<AvgProdGame> avgProdGames = new List<AvgProdGame>();
 
@@ -157,7 +158,7 @@ namespace MyProjet.Controllers
         // 7
         public ActionResult SaleDepartmentQP()
         {
-            string query = "SELECT d.Name, SUM(s.Quantity * s.PricePerUnit) as sumqp FROM bestbuy.departments as d JOIN bestbuy.categories as c ON d.DepartmentID = c.DepartmentID JOIN bestbuy.products as p ON c.CategoryID = p.CategoryID JOIN bestbuy.sales as s ON p.ProductID = s.ProductID WHERE s.Date >= '20190101' AND s.Date <= '20191231' GROUP BY d.DepartmentID;";
+            query = "SELECT d.Name, SUM(s.Quantity * s.PricePerUnit) as sumqp FROM bestbuy.departments as d JOIN bestbuy.categories as c ON d.DepartmentID = c.DepartmentID JOIN bestbuy.products as p ON c.CategoryID = p.CategoryID JOIN bestbuy.sales as s ON p.ProductID = s.ProductID WHERE s.Date >= '20190101' AND s.Date <= '20191231' GROUP BY d.DepartmentID;";
 
             List<SaleDepartment> saleDepartments = new List<SaleDepartment>();
 
@@ -179,7 +180,7 @@ namespace MyProjet.Controllers
         // 8
         public ActionResult EmployeeBestSale()
         {
-            string query = "SELECT d.Name as DepartmentName, e.FirstName, e.LastName, e.Title FROM bestbuy.departments as d JOIN bestbuy.categories as c ON d.DepartmentID = c.DepartmentID JOIN bestbuy.products as p ON c.CategoryID = p.CategoryID JOIN bestbuy.sales as s ON p.ProductID = s.ProductID JOIN bestbuy.employees as e ON s.EmployeeID = e.EmployeeID WHERE s.Date >= '2018-01-01' and s.Date <= '2018-12-31' ORDER BY d.Name, e.FirstName, e.LastName;";
+            query = "SELECT d.Name as DepartmentName, e.FirstName, e.LastName, e.Title FROM bestbuy.departments as d JOIN bestbuy.categories as c ON d.DepartmentID = c.DepartmentID JOIN bestbuy.products as p ON c.CategoryID = p.CategoryID JOIN bestbuy.sales as s ON p.ProductID = s.ProductID JOIN bestbuy.employees as e ON s.EmployeeID = e.EmployeeID WHERE s.Date >= '2018-01-01' and s.Date <= '2018-12-31' ORDER BY d.Name, e.FirstName, e.LastName;";
             List<EmployeeSale> employeeSales = new List<EmployeeSale>();
 
             using (var conn = _conn)
