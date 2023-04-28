@@ -40,7 +40,7 @@ namespace MyProjet
             services.AddTransient<IJoinRepo, JoinRepo>();
             services.AddTransient<IJoin3Tables, Join3Tables>();
             services.AddTransient<IJoin8, Join8>();
-
+            services.AddTransient<IEmployeeRepo, EmployeeRepo>();
 
 
         }
