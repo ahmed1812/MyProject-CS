@@ -61,6 +61,10 @@
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.EmployeeID }) |
     <a asp-action="Index">Back to List</a>
+</div>
+
+<div style="display: block">
+    <a href="/Employee/UpdateEmployee/@Model.EmployeeID">Update this Product</a>
 </div>

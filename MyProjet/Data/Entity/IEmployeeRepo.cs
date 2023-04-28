@@ -7,7 +7,7 @@ namespace MyProjet.Data.Entity
     {
         public IEnumerable<Employee> GetAllEmployees();
         public Employee GetEmployee(int id);
-        //public void UpdateEmployee(Employee employee);
+        public void UpdateEmployee(Employee employee);
         //public void InsertEmployee(Employee employeeToInsert);
         //public IEnumerable<Category> GetCategories();
         //public Employee AssignCategory();

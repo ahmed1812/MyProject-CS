@@ -24,23 +24,23 @@ namespace MyProjet.Controllers
 
             return View(employee);
         }
-        //public IActionResult UpdateEmployee(int id)
-        //{
-        //    Employee emp = repo.GetEmployee(id);
+        public IActionResult UpdateEmployee(int id)
+        {
+            Employee emp = repo.GetEmployee(id);
 
-        //    if (emp == null)
-        //    {
-        //        return View("EmployeeNotFound");
-        //    }
+            if (emp == null)
+            {
+                return View("EmployeeNotFound");
+            }
 
-        //    return View(emp);
-        //}
-        //public IActionResult UpdateEmployeeToDatabase(Employee employee)
-        //{
-        //    repo.UpdateEmployee(employee);
+            return View(emp);
+        }
+        public IActionResult UpdateEmployeeToDatabase(Employee employee)
+        {
+            repo.UpdateEmployee(employee);
 
-        //    return RedirectToAction("ViewProduct", new { id = employee.EmployeeID });
-        //}
+            return RedirectToAction("ViewEmployee", new { id = employee.EmployeeID });
+        }
         //public IActionResult InsertProduct()
         //{
         //    var prod = repo.AssignCategory();

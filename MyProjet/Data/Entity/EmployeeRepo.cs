@@ -21,13 +21,12 @@ namespace MyProjet.Data.Entity
             return _conn.QuerySingle<Employee>("SELECT * FROM Employees WHERE EmployeeID = @id",
                new { id });
         }
-
-        //public void UpdateEmployee(Employee employee)
-        //{
-        //    _conn.Execute("UPDATE products SET Name = @name, Price = @price WHERE ProductID = @id",
-        //        new { name = product.Name, price = product.Price, id = product.ProductID });
-
-        //}
+        //EmployeeID, FirstName, MiddleInitial, LastName, EmailAddress, PhoneNumber, Title, DateOfBirth
+        public void UpdateEmployee(Employee employee)
+        {
+            _conn.Execute("UPDATE Employees SET FirstName = @firstName, MiddleInitial = @midName, LastName = @lastName, EmailAddress = @email, PhoneNumber = @phone, Title = @title, DateOfBirth = @date WHERE EmployeeID = @id",
+                new { firstName = employee.FirstName, midName = employee.MiddleInitial, lastName = employee.LastName, email = employee.EmailAddress, phone = employee.EmailAddress, title = employee.Title, date = employee.DateOfBirth, id = employee.EmployeeID });
+        }
         //public void InsertEmployee(Employee employeetToInsert)
         //{
         //    _conn.Execute("INSERT INTO products (NAME, PRICE, CATEGORYID) VALUES (@name, @price, @categoryID);",
