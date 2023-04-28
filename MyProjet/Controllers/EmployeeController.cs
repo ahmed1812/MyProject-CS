@@ -17,13 +17,13 @@ namespace MyProjet.Controllers
             var employees = repo.GetAllEmployees();
             return View(employees);
         }
-        //public IActionResult ViewEmployee(int id)
-        //{
+        public IActionResult ViewEmployee(int id)
+        {
 
-        //    var employee = repo.GetEmployee(id);
+            var employee = repo.GetEmployee(id);
 
-        //    return View(employee);
-        //}
+            return View(employee);
+        }
         //public IActionResult UpdateEmployee(int id)
         //{
         //    Employee emp = repo.GetEmployee(id);

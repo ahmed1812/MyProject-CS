@@ -599,3 +599,4 @@ C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Ra
 C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\Tables\SaleDepartmentQP.cshtml.g.cs
 C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\Tables\EmployeeBestSale.cshtml.g.cs
 C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\Employee\Index.cshtml.g.cs
+C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\Employee\ViewEmployee.cshtml.g.cs

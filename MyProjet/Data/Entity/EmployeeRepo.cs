@@ -16,11 +16,11 @@ namespace MyProjet.Data.Entity
         {
             return _conn.Query<Employee>("SELECT * FROM Employees;");
         }
-        //public Employee GetEmployee(int id)
-        //{
-        //    return _conn.QuerySingle<Employee>("SELECT * FROM Employees WHERE EmployeeID = @id",
-        //       new { id });
-        //}
+        public Employee GetEmployee(int id)
+        {
+            return _conn.QuerySingle<Employee>("SELECT * FROM Employees WHERE EmployeeID = @id",
+               new { id });
+        }
 
         //public void UpdateEmployee(Employee employee)
         //{
@@ -33,8 +33,8 @@ namespace MyProjet.Data.Entity
         //    _conn.Execute("INSERT INTO products (NAME, PRICE, CATEGORYID) VALUES (@name, @price, @categoryID);",
         //        new { name = productToInsert.Name, price = productToInsert.Price, categoryID = productToInsert.CategoryID });
         //}
-       
-        
+
+
         //public void DeleteEmployee(Employee employee)
         //{
         //    _conn.Execute("DELETE FROM Sales WHERE ProductID = @id;",
