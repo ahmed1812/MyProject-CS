@@ -53,7 +53,7 @@ namespace MyProjet.Data.Entity
         }
         public void DeleteSale(Sale sale)
         {
-            _conn.Execute("DELETE FROM Sales WHERE SaleID = @id;",
+            _conn.Execute("DELETE FROM Sales WHERE SalesID = @id;",
                                        new { id = sale.SalesID });
         }
     }

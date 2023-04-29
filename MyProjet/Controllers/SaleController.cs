@@ -47,9 +47,9 @@ namespace MyProjet.Controllers
 
             return View(prod);
         }
-        public IActionResult InsertSaleToDatabase(Sale SaleToInsert)
+        public IActionResult InsertSaleToDatabase(Sale saleToInsert)
         {
-            repo.InsertSale(SaleToInsert);
+            repo.InsertSale(saleToInsert);
 
             return RedirectToAction("Index");
         }

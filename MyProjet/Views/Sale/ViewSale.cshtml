@@ -55,3 +55,10 @@
 <div style="display: block">
     <a href="/Sale/UpdateSale/@Model.SalesID">Update this Sale</a>
 </div>
+<div style="display: block">
+    @using (Html.BeginForm("DeleteSale", "Sale", "Post"))
+    {
+        <input type="hidden" asp-for="SalesID" value="@Model.SalesID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this Sale" />
+    }
+</div>
