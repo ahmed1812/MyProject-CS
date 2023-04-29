@@ -41,23 +41,23 @@ namespace MyProjet.Controllers
 
             return RedirectToAction("ViewEmployee", new { id = employee.EmployeeID });
         }
-        //public IActionResult InsertProduct()
-        //{
-        //    var prod = repo.AssignCategory();
+        public IActionResult InsertEmployee()
+        {
+            var prod = repo.Assign();
 
-        //    return View(prod);
-        //}
-        //public IActionResult InsertEmployeeToDatabase(Employee employeeToInsert)
-        //{
-        //    repo.InsertEmployee(employeeToInsert);
+            return View(prod);
+        }
+        public IActionResult InsertEmployeeToDatabase(Employee employeeToInsert)
+        {
+            repo.InsertEmployee(employeeToInsert);
 
-        //    return RedirectToAction("Index");
-        //}
-        //public IActionResult DeleteEmployee(Employee employee)
-        //{
-        //    repo.DeleteEmployee(employee);
+            return RedirectToAction("Index");
+        }
+        public IActionResult DeleteEmployee(Employee employee)
+        {
+            repo.DeleteEmployee(employee);
 
-        //    return RedirectToAction("Index");
-        //}
+            return RedirectToAction("Index");
+        }
     }
 }

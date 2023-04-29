@@ -2,6 +2,7 @@
 using MyProjet.Models;
 using System.Collections.Generic;
 using System.Data;
+using System.Net.Mail;
 
 namespace MyProjet.Data.Entity
 {
@@ -27,20 +28,25 @@ namespace MyProjet.Data.Entity
             _conn.Execute("UPDATE Employees SET FirstName = @firstName, MiddleInitial = @midName, LastName = @lastName, EmailAddress = @email, PhoneNumber = @phone, Title = @title, DateOfBirth = @date WHERE EmployeeID = @id",
                 new { firstName = employee.FirstName, midName = employee.MiddleInitial, lastName = employee.LastName, email = employee.EmailAddress, phone = employee.EmailAddress, title = employee.Title, date = employee.DateOfBirth, id = employee.EmployeeID });
         }
-        //public void InsertEmployee(Employee employeetToInsert)
-        //{
-        //    _conn.Execute("INSERT INTO products (NAME, PRICE, CATEGORYID) VALUES (@name, @price, @categoryID);",
-        //        new { name = productToInsert.Name, price = productToInsert.Price, categoryID = productToInsert.CategoryID });
-        //}
+        public void InsertEmployee(Employee employeetToInsert)
+        {
+            _conn.Execute("INSERT INTO Employees (EmployeeID, FirstName, MiddleInitial, LastName, EmailAddress, PhoneNumber, Title, DateOfBirth) VALUES (@employeeID, @firstName, @middleInitial, @lastName, @emailAddress, @phoneNumber, @title, @dateOfBirth);",
+                new { employeeID = employeetToInsert.EmployeeID, firstName = employeetToInsert.FirstName, @middleInitial = employeetToInsert.MiddleInitial, lastName = employeetToInsert.LastName, emailAddress = employeetToInsert.EmailAddress, phoneNumber = employeetToInsert.PhoneNumber, title = employeetToInsert.Title, dateOfBirth = employeetToInsert.DateOfBirth });
+        }
+        public Employee Assign()
+        {
+            var emp = new Employee();
 
+            return emp;
+        }
 
-        //public void DeleteEmployee(Employee employee)
-        //{
-        //    _conn.Execute("DELETE FROM Sales WHERE ProductID = @id;",
-        //                               new { id = employee.ProductID });
-        //    _conn.Execute("DELETE FROM Products WHERE ProductID = @id;",
-        //                               new { id = employee.ProductID });
-        //}
+        public void DeleteEmployee(Employee employee)
+        {
+            _conn.Execute("DELETE FROM Sales WHERE EmployeeID = @id;",
+                                       new { id = employee.EmployeeID });
+            _conn.Execute("DELETE FROM Employees WHERE EmployeeID = @id;",
+                                       new { id = employee.EmployeeID });
+        }
 
     }
 }
