@@ -604,3 +604,4 @@ C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Ra
 C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\Employee\InsertEmployee.cshtml.g.cs
 C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\Sale\Index.cshtml.g.cs
 C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\Sale\ViewSale.cshtml.g.cs
+C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\Sale\UpdateSale.cshtml.g.cs

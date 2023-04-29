@@ -25,7 +25,7 @@ namespace MyProjet.Data.Entity
         //SalesID, ProductID, Quantity, PricePerUnit, Date, EmployeeID
         public void UpdateSale(Sale sale)
         {
-            _conn.Execute("UPDATE Sales SET Quantity = @quantity, PricePerUnit = @pricePerUnit, Date = @date WHERE SaleID = @id",
+            _conn.Execute("UPDATE Sales SET Quantity = @quantity, PricePerUnit = @pricePerUnit, Date = @date WHERE SalesID = @id",
                 new { quantity = sale.Quantity, pricePerUnit = sale.PricePerUnit, date = sale.Date, id = sale.SalesID });
         }
         public void InsertSale(Sale saleToInsert)
