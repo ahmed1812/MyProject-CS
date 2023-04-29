@@ -19,14 +19,14 @@ namespace MyProjet.Data.Entity
         }
         public Sale GetSale(int id)
         {
-            return _conn.QuerySingle<Sale>("SELECT * FROM Sales WHERE SaleID = @id",
+            return _conn.QuerySingle<Sale>("SELECT * FROM Sales WHERE SalesID = @id",
                new { id });
         }
         //SalesID, ProductID, Quantity, PricePerUnit, Date, EmployeeID
         public void UpdateSale(Sale sale)
         {
             _conn.Execute("UPDATE Sales SET Quantity = @quantity, PricePerUnit = @pricePerUnit, Date = @date WHERE SaleID = @id",
-                new { quantity = sale.Quantity, pricePerUnit = sale.PricePerUnit, Date = sale.Date, id = sale.SalesID });
+                new { quantity = sale.Quantity, pricePerUnit = sale.PricePerUnit, date = sale.Date, id = sale.SalesID });
         }
         public void InsertSale(Sale saleToInsert)
         {
