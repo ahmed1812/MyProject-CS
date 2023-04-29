@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using MyProjet.Models;
 
 namespace MyProjet.Models
 {

@@ -16,6 +16,6 @@ namespace MyProjet.Models
         public List<Review> Reviews { get; set; } = new List<Review>();
         public List<Sale> Sales { get; set; } = new List<Sale>();
 
-        
+
     }
 }

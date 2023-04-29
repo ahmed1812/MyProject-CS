@@ -12,6 +12,8 @@ namespace MyProjet.Models
         public double PricePerUnit { get; set; }
         public DateTime Date { get; set; }
         public int EmployeeID { get; set; }
+        public IEnumerable<Employee> employees { get; set; }
+        public IEnumerable<Product> products { get; set; }
         public List<Employee> Employees { get; set; } = new List<Employee>();
 
     }

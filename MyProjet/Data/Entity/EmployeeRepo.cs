@@ -30,8 +30,8 @@ namespace MyProjet.Data.Entity
         }
         public void InsertEmployee(Employee employeetToInsert)
         {
-            _conn.Execute("INSERT INTO Employees (EmployeeID, FirstName, MiddleInitial, LastName, EmailAddress, PhoneNumber, Title, DateOfBirth) VALUES (@employeeID, @firstName, @middleInitial, @lastName, @emailAddress, @phoneNumber, @title, @dateOfBirth);",
-                new { employeeID = employeetToInsert.EmployeeID, firstName = employeetToInsert.FirstName, @middleInitial = employeetToInsert.MiddleInitial, lastName = employeetToInsert.LastName, emailAddress = employeetToInsert.EmailAddress, phoneNumber = employeetToInsert.PhoneNumber, title = employeetToInsert.Title, dateOfBirth = employeetToInsert.DateOfBirth });
+            _conn.Execute("INSERT INTO Employees (FirstName, MiddleInitial, LastName, EmailAddress, PhoneNumber, Title, DateOfBirth) VALUES (@firstName, @middleInitial, @lastName, @emailAddress, @phoneNumber, @title, @dateOfBirth);",
+                new { firstName = employeetToInsert.FirstName, @middleInitial = employeetToInsert.MiddleInitial, lastName = employeetToInsert.LastName, emailAddress = employeetToInsert.EmailAddress, phoneNumber = employeetToInsert.PhoneNumber, title = employeetToInsert.Title, dateOfBirth = employeetToInsert.DateOfBirth });
         }
         public Employee Assign()
         {
