@@ -1,0 +1,45 @@
+﻿@model MyProjet.Models.Category
+
+@{
+    ViewData["Title"] = "ViewCategory";
+}
+
+<h1>ViewCategory</h1>
+<div style="display: block">
+    <a href="/Category/UpdateCategory/@Model.CategoryID">Update this Category</a>
+</div>
+<div>
+    <h4>Category</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CategoryID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CategoryID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DepartmentID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DepartmentID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<div style="display: block">
+    @using (Html.BeginForm("DeleteCategory", "Category", "Post"))
+    {
+        <input type="hidden" asp-for="CategoryID" value="@Model.CategoryID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this Category" />
+    }
+</div>

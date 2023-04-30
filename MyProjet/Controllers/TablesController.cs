@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Dapper;
+using Microsoft.AspNetCore.Mvc;
 using MyProjet.Data.Relationship;
 using MyProjet.Models;
 using MySql.Data.MySqlClient;
@@ -199,6 +200,20 @@ namespace MyProjet.Controllers
                 }
             }
             return View(employeeSales);
+        }
+        public ActionResult Test(string sYear, string eYear)
+        {
+            var query = @"SELECT employees.FirstName, employees.LastName, SUM(sales.Quantity * sales.PricePerUnit) AS TotalSale FROM bestbuy.employees JOIN bestbuy.sales ON employees.EmployeeID = sales.EmployeeID WHERE sales.Date >= @sYear AND sales.Date <= @eYear GROUP BY employees.EmployeeID;";
+
+            using (var conn = _conn)
+            {
+                var adapter = new MySqlDataAdapter(query, (MySqlConnection)conn);
+
+                var parameters = new { sYear, eYear };
+                var results = conn.Query(query, parameters);
+
+                return View(results);
+            }
         }
     }
 }

@@ -611,3 +611,6 @@ C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Ra
 C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\Department\UpdateDepartment.cshtml.g.cs
 C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\Department\InsertDepartment.cshtml.g.cs
 C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\Category\Index.cshtml.g.cs
+C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\Category\ViewCategory.cshtml.g.cs
+C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\Category\UpdateCategory.cshtml.g.cs
+C:\Users\Ahmed\OneDrive\Desktop\MyProject-CS\MyProjet\obj\Debug\netcoreapp3.1\Razor\Views\Category\InsertCategory.cshtml.g.cs

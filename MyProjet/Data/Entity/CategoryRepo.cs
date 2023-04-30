@@ -30,7 +30,7 @@ namespace MyProjet.Data.Entity
         public void InsertCategory(Category categorytToInsert)
         {
             _conn.Execute("INSERT INTO categories (Name, DepartmentID) VALUES (@name, @departmentID);",
-                new {nmae  = categorytToInsert.Name, departmentID = categorytToInsert.DepartmentID});
+                new {name = categorytToInsert.Name, departmentID = categorytToInsert.DepartmentID});
         }
         public IEnumerable<Department> GetDepartments()
         {
