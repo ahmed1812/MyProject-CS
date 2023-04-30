@@ -1,0 +1,38 @@
+﻿@model MyProjet.Models.Department
+
+@{
+    ViewData["Title"] = "ViewDepartment";
+}
+
+<h1>ViewDepartment</h1>
+<div style="display: block">
+    <a href="/Department/UpdateDepartment/@Model.DepartmentID">Update this Department</a>
+</div>
+<div>
+    <h4>Department</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DepartmentID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DepartmentID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<div style="display: block">
+    @using (Html.BeginForm("DeleteDepartment", "Department", "Post"))
+    {
+        <input type="hidden" asp-for="DepartmentID" value="@Model.DepartmentID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this Department" />
+    }
+</div>

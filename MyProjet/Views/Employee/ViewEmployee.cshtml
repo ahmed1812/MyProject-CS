@@ -5,7 +5,9 @@
 }
 
 <h1>ViewEmployee</h1>
-
+<div style="display: block">
+    <a href="/Employee/UpdateEmployee/@Model.EmployeeID">Update this Employee</a>
+</div>
 <div>
     <h4>Employee</h4>
     <hr />
@@ -61,9 +63,7 @@
     </dl>
 </div>
 
-<div style="display: block">
-    <a href="/Employee/UpdateEmployee/@Model.EmployeeID">Update this Employee</a>
-</div>
+
 
 <div style="display: block">
     @using (Html.BeginForm("DeleteEmployee", "Employee", "Post"))

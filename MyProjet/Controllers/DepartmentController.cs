@@ -35,11 +35,11 @@ namespace MyProjet.Controllers
 
             return View(emp);
         }
-        public IActionResult UpdateDepartmentToDatabase(Department Department)
+        public IActionResult UpdateDepartmentToDatabase(Department department)
         {
-            repo.UpdateDepartment(Department);
+            repo.UpdateDepartment(department);
 
-            return RedirectToAction("ViewDepartment", new { id = Department.DepartmentID });
+            return RedirectToAction("ViewDepartment", new { id = department.DepartmentID });
         }
         public IActionResult InsertDepartment()
         {

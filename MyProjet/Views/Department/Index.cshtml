@@ -6,9 +6,9 @@
 
 <h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<div style="display: block">
+    <a href="/Department/InsertDepartment/">Create a New Department</a>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -25,15 +25,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.DepartmentID)
+                    <a href=/Department/ViewDepartment/@item.DepartmentID>@item.DepartmentID</a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
 }
