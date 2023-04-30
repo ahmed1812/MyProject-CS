@@ -42,7 +42,7 @@ namespace MyProjet
             services.AddTransient<IJoin8, Join8>();
             services.AddTransient<IEmployeeRepo, EmployeeRepo>();
             services.AddTransient<ISaleRepo, SaleRepo>();
-
+            services.AddTransient<IDepartmentRepo, DepartmentRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
