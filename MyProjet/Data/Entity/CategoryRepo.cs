@@ -14,23 +14,23 @@ namespace MyProjet.Data.Entity
         }
         public IEnumerable<Category> GetAllCategorys()
         {
-            return _conn.Query<Category>("SELECT * FROM Categorys;");
+            return _conn.Query<Category>("SELECT * FROM categories;");
         }
         public Category GetCategory(int id)
         {
-            return _conn.QuerySingle<Category>("SELECT * FROM Categorys WHERE CategoryID = @id",
+            return _conn.QuerySingle<Category>("SELECT * FROM categories WHERE CategoryID = @id",
                new { id });
         }
-        //CategoryID, FirstName, MiddleInitial, LastName, EmailAddress, PhoneNumber, Title, DateOfBirth
-        public void UpdateCategory(Category Category)
+        //CategoryID, Name, DepartmentID
+        public void UpdateCategory(Category category)
         {
-            _conn.Execute("UPDATE Categorys SET FirstName = @firstName, MiddleInitial = @midName, LastName = @lastName, EmailAddress = @email, PhoneNumber = @phone, Title = @title, DateOfBirth = @date WHERE CategoryID = @id",
-                new { firstName = Category.FirstName, midName = Category.MiddleInitial, lastName = Category.LastName, email = Category.EmailAddress, phone = Category.EmailAddress, title = Category.Title, date = Category.DateOfBirth, id = Category.CategoryID });
+            _conn.Execute("UPDATE categories SET Name = @name  WHERE CategoryID = @id",
+                new {  name = category.Name, id = category.CategoryID });
         }
-        public void InsertCategory(Category CategorytToInsert)
+        public void InsertCategory(Category categorytToInsert)
         {
-            _conn.Execute("INSERT INTO Categorys (FirstName, MiddleInitial, LastName, EmailAddress, PhoneNumber, Title, DateOfBirth) VALUES (@firstName, @middleInitial, @lastName, @emailAddress, @phoneNumber, @title, @dateOfBirth);",
-                new { firstName = CategorytToInsert.FirstName, @middleInitial = CategorytToInsert.MiddleInitial, lastName = CategorytToInsert.LastName, emailAddress = CategorytToInsert.EmailAddress, phoneNumber = CategorytToInsert.PhoneNumber, title = CategorytToInsert.Title, dateOfBirth = CategorytToInsert.DateOfBirth });
+            _conn.Execute("INSERT INTO categories (Name, DepartmentID) VALUES (@name, @departmentID);",
+                new {nmae  = categorytToInsert.Name, departmentID = categorytToInsert.DepartmentID});
         }
         public IEnumerable<Department> GetDepartments()
         {
@@ -49,7 +49,7 @@ namespace MyProjet.Data.Entity
         {
             _conn.Execute("DELETE FROM products WHERE CategoryID = @id;",
                                        new { id = Category.CategoryID });
-            _conn.Execute("DELETE FROM Categorys WHERE CategoryID = @id;",
+            _conn.Execute("DELETE FROM categories WHERE CategoryID = @id;",
                                        new { id = Category.CategoryID });
         }
     }

@@ -43,6 +43,7 @@ namespace MyProjet
             services.AddTransient<IEmployeeRepo, EmployeeRepo>();
             services.AddTransient<ISaleRepo, SaleRepo>();
             services.AddTransient<IDepartmentRepo, DepartmentRepo>();
+            services.AddTransient<ICategoryRepo, CategoryRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
