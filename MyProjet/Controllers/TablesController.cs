@@ -201,19 +201,27 @@ namespace MyProjet.Controllers
             }
             return View(employeeSales);
         }
-        public ActionResult Test(string sYear, string eYear)
+        // 9
+        public ActionResult BestProductSale()
         {
-            var query = @"SELECT employees.FirstName, employees.LastName, SUM(sales.Quantity * sales.PricePerUnit) AS TotalSale FROM bestbuy.employees JOIN bestbuy.sales ON employees.EmployeeID = sales.EmployeeID WHERE sales.Date >= @sYear AND sales.Date <= @eYear GROUP BY employees.EmployeeID;";
+            query = "SELECT Products.Name, SUM(Sales.Quantity * Sales.PricePerUnit) AS Revenue FROM bestbuy.Products JOIN bestbuy.Sales ON Products.ProductID = Sales.ProductID GROUP BY Products.ProductID ORDER BY Revenue DESC LIMIT 10;";
+            List<BestProductSales> bestProductSales = new List<BestProductSales>();
 
             using (var conn = _conn)
             {
                 var adapter = new MySqlDataAdapter(query, (MySqlConnection)conn);
+                DataSet dataSet = new DataSet();
+                adapter.Fill(dataSet);
+                foreach (DataRow row in dataSet.Tables[0].Rows)
+                {
+                    BestProductSales bestProductSale = new BestProductSales();
 
-                var parameters = new { sYear, eYear };
-                var results = conn.Query(query, parameters);
-
-                return View(results);
+                    bestProductSale.PName = row["Name"].ToString();
+                    bestProductSale.Price = double.Parse(row["Revenue"].ToString());
+                    bestProductSales.Add(bestProductSale);
+                }
             }
+            return View(bestProductSales);
         }
     }
 }

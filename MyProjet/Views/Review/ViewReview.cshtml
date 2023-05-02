@@ -4,7 +4,9 @@
 }
 
 <h1>ViewReview</h1>
-
+<div style="display: block">
+    <a href="/Review/UpdateReview/@Model.ReviewID">Update this Review</a>
+</div>
 <table class="table">
     <tr>
         <th>ReviewID</th>
@@ -22,6 +24,11 @@
     </tr>
 </table>
 
+
 <div style="display: block">
-    <a href="/Review/UpdateReview/@Model.ReviewID">Update this Review</a>
+    @using (Html.BeginForm("DeleteReview", "Review", "Post"))
+    {
+        <input type="hidden" asp-for="ReviewID" value="@Model.ReviewID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this Review" />
+    }
 </div>

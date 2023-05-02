@@ -1,19 +1,22 @@
-﻿@model List<ProductCategory>
+﻿@model List<BestProductSales>
+@{
+    ViewData["Title"] = "BestProductSale";
+}
 
-<h2>1- Retrieve the name and price of all products in the "Computers" category:</h2>
+<h1>9- Retrieve the name and total revenue of the top 10 best-selling products:</h1>
 
 <table class="table">
     <thead>
         <tr>
             <th>Product Name</th>
-            <th>Category Price</th>
+            <th>Product Price</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var pc in Model)
         {
             <tr>
-                <td>@pc.Name</td>
+                <td>@pc.PName</td>
                 <td>@pc.Price</td>
             </tr>
         }

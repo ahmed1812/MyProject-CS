@@ -11,5 +11,6 @@ namespace MyProjet.Data.Entity
         public void InsertReview(Review ReviewToInsert);
         public IEnumerable<Product> GetProducts();
         public Review AssignProduct();
+        public void DeleteReview(Review review);
     }
 }

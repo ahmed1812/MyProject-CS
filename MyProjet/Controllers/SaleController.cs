@@ -53,9 +53,9 @@ namespace MyProjet.Controllers
 
             return RedirectToAction("Index");
         }
-        public IActionResult DeleteSale(Sale Sale)
+        public IActionResult DeleteSale(Sale sale)
         {
-            repo.DeleteSale(Sale);
+            repo.DeleteSale(sale);
 
             return RedirectToAction("Index");
         }

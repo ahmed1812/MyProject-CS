@@ -52,7 +52,12 @@ namespace MyProjet.Controllers
 
             return RedirectToAction("Index");
         }
+        public IActionResult DeleteSale(Review review)
+        {
+            repo.DeleteReview(review);
 
+            return RedirectToAction("Index");
+        }
 
     }
 }
