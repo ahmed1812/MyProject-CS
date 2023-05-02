@@ -93,7 +93,7 @@ namespace MyProjet.Controllers
         //2
         public ActionResult CatProDep()
         {
-            query = "SELECT DISTINCT categories.Name as cname, departments.Name as dname FROM bestbuy.categories JOIN bestbuy.products ON categories.CategoryID = products.CategoryID JOIN bestbuy.departments ON categories.DepartmentID = departments.DepartmentID WHERE products.OnSale = 1;";
+            query = "SELECT categories.Name as cname, departments.Name as dname, products.Name as pname FROM bestbuy.categories JOIN bestbuy.products ON categories.CategoryID = products.CategoryID JOIN bestbuy.departments ON categories.DepartmentID = departments.DepartmentID WHERE products.OnSale = 1;";
 
             List<CategroeProductDepartment> categroeProductDepartments = new List<CategroeProductDepartment>();
 
@@ -107,6 +107,7 @@ namespace MyProjet.Controllers
                     CategroeProductDepartment categroeProductDepartment = new CategroeProductDepartment();
                     categroeProductDepartment.CName = row["cname"].ToString();
                     categroeProductDepartment.DName = row["dname"].ToString();
+                    categroeProductDepartment.PName = row["pname"].ToString();
                     categroeProductDepartments.Add(categroeProductDepartment);
                 }
             }
