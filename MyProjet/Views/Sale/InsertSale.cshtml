@@ -14,16 +14,14 @@
 {
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="SalesID" class="control-label"></label>
-                <input asp-for="SalesID" class="form-control" type="hidden" />
-                <span asp-validation-for="SalesID" class="text-danger"></span>
-            </div>
+                <label for="">Select a Product</label>
             <select class="form-control" name="ProductID" value="">
                 @foreach (var prod in Model.products)
                 {
                     <option value="@prod.ProductID">@prod.ProductID @prod.Name</option>
                 }
             </select>
+            </div>
             <div class="form-group">
                 <label asp-for="Quantity" class="control-label"></label>
                 <input asp-for="Quantity" class="form-control" />
@@ -39,12 +37,16 @@
                 <input asp-for="Date" class="form-control" />
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label for="">Select a Employee</label>
             <select class="form-control" name="EmployeeID" value="">
+                <label asp-for="Employees" class="control-label"></label>
                 @foreach (var emp in Model.employees)
                 {
-                    <option value="@emp.EmployeeID">@emp.EmployeeID @emp.FirstName</option>
+                    <option value="@emp.EmployeeID">@emp.FirstName @emp.LastName</option>
                 }
             </select>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

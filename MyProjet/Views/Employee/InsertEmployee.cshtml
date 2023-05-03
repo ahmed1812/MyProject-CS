@@ -4,20 +4,15 @@
     ViewData["Title"] = "InsertEmployee";
 }
 
-<h1>InsertProduct</h1>
+<h1>Insert Employee</h1>
 
-<h4>Employee</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         @using (Html.BeginForm("InsertEmployeeToDatabase", "Employee", "Post"))
 {
             @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
-            <div class="form-group">
-                <label asp-for="EmployeeID" class="control-label"></label>
-                <input asp-for="EmployeeID" class="form-control" type="hidden" />
-                <span asp-validation-for="EmployeeID" class="text-danger"></span>
-            </div>
+          
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
                 <input type="text" name="FirstName" class="form-control" />
