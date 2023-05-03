@@ -22,7 +22,6 @@ namespace MyProjet.Data.Entity
             return _conn.QuerySingle<Employee>("SELECT * FROM Employees WHERE EmployeeID = @id",
                new { id });
         }
-        //EmployeeID, FirstName, MiddleInitial, LastName, EmailAddress, PhoneNumber, Title, DateOfBirth
         public void UpdateEmployee(Employee employee)
         {
             _conn.Execute("UPDATE Employees SET FirstName = @firstName, MiddleInitial = @midName, LastName = @lastName, EmailAddress = @email, PhoneNumber = @phone, Title = @title, DateOfBirth = @date WHERE EmployeeID = @id",
