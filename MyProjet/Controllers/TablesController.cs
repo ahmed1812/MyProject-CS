@@ -50,7 +50,7 @@ namespace MyProjet.Controllers
         {
             query = "SELECT products.Name, products.Price " +
                 "FROM bestbuy.products JOIN bestbuy.categories " +
-                "ON products.CategoryID = categories.CategoryID " +
+                "ON products.CategoryID = categories.CategoryID" +
                 "WHERE categories.Name = 'Computers';";
 
             List<ProductCategory> productCategorys = new List<ProductCategory>();
