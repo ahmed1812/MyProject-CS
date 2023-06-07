@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MyProjet"
   ],
-  "SelectedNode": "\\MyProjet.sln",
+  "SelectedNode": "\\MyProjet\\appsettings.json",
   "PreviewInSolutionExplorer": false
 }
